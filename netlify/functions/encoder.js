@@ -1,6 +1,6 @@
-const { encode } = require('@nem035/gpt-3-encoder')
+import { encode } from '@nem035/gpt-3-encoder'
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
 
     if (event.httpMethod === 'POST') {
 
