@@ -7,6 +7,9 @@ exports.handler = async (event, context) => {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ error: 'URL is required in the JSON body' }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             };
         }
 
@@ -17,11 +20,17 @@ exports.handler = async (event, context) => {
         return {
             statusCode: 200,
             body: JSON.stringify(extractedData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         };
     } catch (error) {
         return {
             statusCode: 500,
             body: JSON.stringify({ error: error.message }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         };
     }
 };
