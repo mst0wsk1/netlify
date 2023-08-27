@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
         if (!url) {
             return {
                 statusCode: 400,
-                body: JSON.stringify({ error: 'URL parameter is required' }),
+                body: JSON.stringify({ error: 'URL is required in the JSON body' }),
             };
         }
 
