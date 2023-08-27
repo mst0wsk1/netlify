@@ -1,7 +1,8 @@
 import unfluff from 'unfluff';
 exports.handler = async (event, context) => {
     try {
-        const url = event.queryStringParameters.url;
+        const data = JSON.parse(event.body); 
+        const url = data.url;
         if (!url) {
             return {
                 statusCode: 400,
